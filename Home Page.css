@@ -1,0 +1,737 @@
+/* :root for global variables (optional but recommended) */
+:root {
+    --primary-color: #bd8b2f; /* Example primary color */
+    --secondary-color: #a57e29; /* Example secondary color */
+    --text-color: #2e2d2d;
+    --light-bg: hsl(44, 65%, 81%);
+    --dark-bg: #0c0f11;
+    --accent-color: #f5d08d;
+    --white: white;
+    --black: black;
+    --light-shadow: rgba(0, 0, 0, 0.1);
+    --medium-shadow: rgba(0, 0, 0, 0.2);
+    --dark-shadow: rgba(0, 0, 0, 0.6);
+}
+
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg); /* Light background */
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, var(--black), #9e7a37, var(--black)); /* Updated gradient */
+    color: var(--white);
+    padding: 15px 20px; /* Adjusted padding */
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px var(--light-shadow);
+    border-bottom: 3px solid var(--accent-color);
+    animation: slideDown 0.5s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px; /* Adjusted logo size */
+    margin-right: 15px;
+}
+
+.logo-text {
+    font-size: 1.5em; /* Adjusted logo text size */
+    font-weight: bold;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Adjusted gap */
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em; /* Adjusted font size */
+    transition: color 0.3s ease-in-out;
+    padding: 8px 10px; /* Adjusted padding */
+}
+
+nav ul li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--white);
+    transition: width 0.3s ease-in-out;
+    margin: auto;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('./Images/GwaliorFortHero.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60vh; /* Further adjusted height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    text-shadow: 2px 2px 4px var(--dark-shadow);
+    animation: fadeInUp 1s ease-in-out;
+    margin-top: 65px; /* Adjust for header height */
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 40px; /* Increased padding */
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
+    border-radius: 10px;
+}
+
+.hero h2 {
+    font-size: 2.8em; /* Increased font size */
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.3em; /* Increased font size */
+    margin-bottom: 25px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Reduced initial movement */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 30px; /* Increased padding */
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px; /* More rounded */
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    font-size: 1.1em;
+    font-weight: bold;
+    box-shadow: 0 4px 6px var(--medium-shadow); /* Enhanced shadow */
+}
+
+.btn:hover {
+    background-color: #2c691d;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhanced hover shadow */
+}
+
+/* History Section */
+.history {
+    padding: 60px 20px; /* Increased padding */
+    text-align: center;
+    background-color: var(--white);
+    border-bottom: 1px solid #eee;
+}
+
+.history h2 {
+    font-size: 2.4em; /* Increased font size */
+    margin-bottom: 30px;
+    color: #7c6b3d;
+}
+
+.history-content {
+    display: flex;
+    flex-direction: row; /* Changed to row for image and text side-by-side */
+    align-items: center; /* Vertically align items */
+    margin-bottom: 40px;
+    gap: 30px; /* Spacing between image and text */
+}
+
+.history-content:nth-child(even) {
+    flex-direction: row-reverse; /* Alternate image position */
+}
+
+.history-image {
+    max-width: 45%; /* Adjusted image width */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--light-shadow);
+}
+
+.history-content p {
+    text-align: left;
+    max-width: 50%; /* Adjusted text width */
+    font-size: 1.1em; /* Slightly increased font size */
+}
+
+.history p {
+    max-width: 800px;
+    margin: 25px auto; /* Increased margin */
+    text-align: left;
+    font-size: 1.1em;
+}
+
+/* Destinations Section */
+.destinations {
+    padding: 60px 20px; /* Increased padding */
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.destinations h2 {
+    font-size: 2.4em; /* Increased font size */
+    margin-bottom: 30px;
+    color: #a57e29;
+}
+
+.destination-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Increased min width */
+    gap: 30px; /* Increased gap */
+    padding: 30px;
+}
+
+.destination {
+    height: 300px; /* Increased height */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 15px; /* More rounded */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden; /* Clip content for rounded corners */
+}
+
+.destination::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Slightly darker overlay */
+    border-radius: 15px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.destination:hover::before {
+    background-color: rgba(0, 0, 0, 0.6); /* Darker overlay on hover */
+}
+
+.destination:hover {
+    transform: translateY(-8px); /* Increased lift */
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
+}
+
+.destination h3 {
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--white);
+    padding: 18px; /* Increased padding */
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    font-size: 1.5em; /* Increased font size */
+    border-radius: 0 0 15px 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.destination h3 a {
+    color: var(--white);
+    text-decoration: none; /* Remove underline from links in destination titles */
+}
+
+/* Tourist Places Page Styles (adjust as needed based on your HTML) */
+main.container {
+    padding-top: 65px; /* Adjusted to match header height */
+}
+
+.place-card {
+    background-color: var(--white);
+    border-radius: 10px; /* More rounded */
+    box-shadow: 0 4px 6px var(--light-shadow);
+    padding: 30px; /* Increased padding */
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.place-card img {
+    width: 100%; /* Make images fill the width of their container */
+    max-height: 300px; /* Set a maximum height for consistency */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    border-radius: 10px;
+    margin-bottom: 1.5em;
+    box-shadow: 0 2px 4px var(--light-shadow);
+}
+
+.place-card h2 {
+    color: #c59e48;
+    margin-bottom: 0.75em; /* Further reduced margin below heading */
+    font-size: 1.8em; /* Increased font size */
+}
+
+.place-card h2 a {
+    color: inherit; /* Inherit color from h2 */
+    text-decoration: none; /* Remove underline from linked titles */
+}
+
+.place-card p {
+    color: var(--text-color);
+    line-height: 1.7; /* Improved line height */
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    text-align: left; /* Improve readability for longer text */
+}
+
+.place-card .btn {
+    /* Inherits styling from the general .btn */
+    margin-top: 15px;
+}
+
+/* Hotel Booking Page Styles (adjust based on your HTML) */
+.booking-search {
+    background-color: var(--white);
+    border-radius: 10px; /* More rounded */
+    box-shadow: 0 4px 6px var(--light-shadow);
+    padding: 40px; /* Increased padding */
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.booking-search h2 {
+    color: #c59e48;
+    margin-bottom: 25px;
+    font-size: 2em; /* Increased font size */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 1.1em;
+    text-align: left; /* Improve label alignment */
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"] {
+    width: calc(100% - 22px);
+    padding: 12px; /* Increased padding */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* More rounded */
+    font-size: 1em;
+}
+
+.featured-hotels h2 {
+    color: #c59e48;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 2em; /* Increased font size */
+}
+
+.hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Increased min width */
+    gap: 25px;
+}
+
+.hotel-card {
+    background-color: var(--white);
+    border-radius: 10px; /* More rounded */
+    box-shadow: 0 4px 6px var(--light-shadow);
+    padding: 20px;
+    text-align: center;
+}
+
+.hotel-card img {
+    width: 100%;
+    height: 220px; /* Increased height */
+    object-fit: cover;
+    border-radius: 10px; /* More rounded */
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px var(--light-shadow);
+}
+
+.hotel-card h3 {
+    color: #333;
+    margin: 12px 0; /* Increased margin */
+    font-size: 1.2em; /* Increased font size */
+}
+
+.hotel-card p {
+    color: #555;
+    line-height: 1.7; /* Improved line height */
+    margin-bottom: 15px;
+    font-size: 1em;
+    text-align: left; /* Improve readability */
+}
+
+.hotel-card button {
+    /* Inherits styling from the general button */
+    padding: 12px 25px; /* Adjusted button padding */
+    font-size: 1.1em; /* Adjusted button font size */
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: var(--dark-bg); /* Dark background for title */
+    color: var(--white);
+    border-radius: 5px;
+}
+
+/* Transportation Page Styles */
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: var(--dark-bg); /* Dark background for title */
+    color: var(--white);
+    border-radius: 5px;
+}
+
+.transport-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.transport-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.transport-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    max-height: 200px;
+}
+
+/* Ensure container has top margin to avoid overlap */
+.container.mt-5 {
+    margin-top: 75px !important; /* Adjust based on your header height */
+}
+
+/* Style the footer */
+.bg-dark.text-light.py-3.mt-4.text-center {
+    background-color: #343a40 !important;
+    color: var(--white) !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    margin-top: 20px !important;
+    text-align: center !important;
+}
+
+/* Bootstrap Overrides (Optional - if you need to further customize Bootstrap styles) */
+.btn-primary {
+    background-color: var(--primary-color) !important; /* Match your theme color */
+    border-color: var(--primary-color) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--white);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: var(--accent-color); /* Match your hover color */
+}
+
+.navbar-dark .navbar-brand {
+    color: var(--white);
+}
+
+/* Responsive Navigation (Hamburger Menu) - This part is for the overall navigation, but included as it affects the header on the transport page */
+.navbar-toggler {
+    display: none; /* Hide by default on larger screens */
+}
+
+@media (max-width: 991.98px) { /* Bootstrap's breakpoint for large screens down */
+    .navbar-toggler {
+        display: block; /* Show on smaller screens */
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .navbar-toggler-icon {
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        vertical-align: middle;
+        content: "";
+        background: no-repeat center center;
+        background-size: 100% 100%;
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* White hamburger icon */
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 1001; /* Above the fixed header */
+        padding: 15px;
+    }
+
+    .navbar-nav {
+        flex-direction: column !important;
+        align-items: start !important; /* Align links to the left in the dropdown */
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px 0 !important;
+        text-align: left;
+    }
+
+    .navbar-nav .nav-link.active {
+        border-left: 3px solid var(--accent-color); /* Add a visual indicator for the active link */
+        padding-left: 12px !important;
+    }
+}
+
+/* Style the footer */
+.bg-dark.text-light.py-3.mt-4.text-center {
+    background-color: #343a40 !important;
+    color: var(--white) !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    margin-top: 20px !important;
+    text-align: center !important;
+}
+
+/* Bootstrap Overrides (Optional - if you need to further customize Bootstrap styles) */
+.btn-primary {
+    background-color: var(--primary-color) !important; /* Match your theme color */
+    border-color: var(--primary-color) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--white);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: var(--accent-color); /* Match your hover color */
+}
+
+.navbar-dark .navbar-brand {
+    color: var(--white);
+}
+
+/* Styles for Detailed Pages (e.g., gwalior-fort.html, jai-vilas-palace.html) */
+.detailed-page h1 {
+    font-size: 2.8em;
+    color: #c59e48;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+.hero-section {
+    background-image: url('./Images/GwaliorFortHero.jpg'); /* Replace with your image */
+    background-size: cover;
+    color: var(--white);
+    text-align: center;
+    padding: 100px 0;
+    background-position: center;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px var(--dark-shadow);
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px var(--dark-shadow);
+}
+
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--white);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.detailed-page h1 {
+    color: #d35400; /* Example heading color */
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.detailed-info {
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.detailed-info img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.detailed-info .text-content h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.detailed-info .text-content p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.detailed-info .text-content ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.detailed-info .text-content li {
+    margin-bottom: 8px;
+}
+
+.call-to-action {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.call-to-action a {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #d35400; /* Example button color */
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.call-to-action a:hover {
+    background-color: #e67e22; /* Example button hover color */
+}
+
+/* Specific styling for sections (optional) */
+.culture-section {
+    /* Add specific styles for the culture section if needed */
+}
+
+.food-section {
+    /* Add specific styles for the food section if needed */
+    grid-template-columns: 1fr 1fr; /* Ensure image is on the left */
+}
+
+.food-section .text-content {
+    order: 2; /* Move text content to the right */
+}
+
+.shopping-section {
+    /* Add specific styles for the shopping section if needed */
+}
+
+/* Responsive design (example) */
+@media (max-width: 768px) {
+    .detailed-info {
+        grid-template-columns: 1fr; /* Stack images and text on smaller screens */
+    }
+
+    .food-section {
+        grid-template-columns: 1fr; /* Stack on smaller screens */
+    }
+
+    .food-section .text-content {
+        order: 1; /* Ensure text is above image on smaller screens */
+    }
+
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+}
