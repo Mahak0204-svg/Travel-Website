@@ -6,8 +6,6 @@
 </p>
 <b>GwaliorSaga</b> is your comprehensive guide to discovering the vibrant city of Gwalior, Madhya Pradesh, India. Whether you're a seasoned traveler or planning your first visit, this website provides you with all the essential information to make your Gwalior experience unforgettable.
 
-# Access the deployed website here 🌐: [Project Website](https://mahak0204-svg.github.io/Travel-Website/)
-
 ## ✨ Features
 
 * **Discover Tourist Gems:** Explore detailed information about Gwalior's iconic landmarks and hidden treasures, including:
